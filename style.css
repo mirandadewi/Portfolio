@@ -213,7 +213,7 @@ span{
     font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 .about-content p{
-    font-size: medium;
+    font-size: 2 rem;
     margin: 2rem 0 3rem;
     font-family: 'Times New Roman', Times, serif;
     text-align: justify;
