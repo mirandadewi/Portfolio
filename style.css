@@ -216,6 +216,7 @@ span{
     font-size: 3rem;
     margin: 2rem 0 3rem;
     font-family: 'Times New Roman', Times, serif;
+    text-align: justify;
 }
 .heading1{
     font-size: 8rem;
