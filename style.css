@@ -488,6 +488,13 @@ span{
     width: 85%;
 }
 
+/* Project css */
+.header-action-aria{
+    margin-top: .7rem;
+    display: flex;
+    gap: .7rem;
+}
+
 /* Contact css */
 .contact {
     padding: 1rem;
