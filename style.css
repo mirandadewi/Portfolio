@@ -504,6 +504,17 @@ span{
 .project{
     padding: 24px;
     border: 1px solid var(--color-dark-variant);
+    border-radius: 30px;
+    text-align: center;
+}
+
+.project img{
+    border-radius: 30px;
+    margin-bottom: 1rem;
+    -webkit-border-radius: 30px;
+    -moz-border-radius: 30px;
+    -ms-border-radius: 30px;
+    -o-border-radius: 30px;
 }
 /* Contact css */
 .contact {
