@@ -488,6 +488,7 @@ span{
     margin-top: .7rem;
     display: flex;
     gap: .7rem;
+    text-align: center;
 }
 
 .project-container{
