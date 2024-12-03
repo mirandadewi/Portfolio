@@ -1,4 +1,4 @@
-*{
+{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -11,7 +11,7 @@
 :root{
     --bg-color: #f8faf4;
     --second-bg-color: #ccb6af;
-    --text--color:black;
+    --text--color: black;
     --main-color: #a6b185;
 }
 html{
@@ -586,7 +586,7 @@ span{
 .footerContainer{
     width: 100%;
     padding: 70px 30px 20px;
-    background-color: var(--second-bg-color);
+    background-color: var(---main-color);
 }
 
 .socialIcons{
