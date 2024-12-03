@@ -21,13 +21,13 @@ html{
 body{
     background: var(--bg-color);
     color: var(--text-color);
-    font-family: poppons;
+    font-family: "Poppins";
 }
 .header{
     position: fixed;
     top: 0;
     left:0;
-    width: 90%;
+    width: 100%;
     padding: 3rem 9%;
     backdrop-filter: blur(10px);
     display:flex;
