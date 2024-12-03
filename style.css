@@ -360,10 +360,6 @@ span{
     height: 2rem;
     background: var(--main-color);
     border-radius: 50%;
-    -webkit-border-radius: 50%;
-    -moz-border-radius: 50%;
-    -ms-border-radius: 50%;
-    -o-border-radius: 50%;
 }
 .experience-content .content{
     position: relative;
@@ -383,10 +379,6 @@ span{
     background: var(--second-bg-color);
     z-index: -1;
     transition: .5s;
-    -webkit-transition: .5s;
-    -moz-transition: .5s;
-    -ms-transition: .5s;
-    -o-transition: .5s;
 }
 .experience-content .content:hover::before {
     width: 100%;
@@ -487,6 +479,9 @@ span{
 .skills-column:nth-child(2) .skills-content .progress:nth-child(3) .bar span{
     width: 85%;
 }
+.skills-column:nth-child(2) .skills-content .progress:nth-child(4) .bar span{
+        width: 85%;
+}
 
 /* Project css */
 .header-action-aria{
@@ -586,7 +581,7 @@ span{
 .footerContainer{
     width: 100%;
     padding: 70px 30px 20px;
-    background-color: var(---main-color);
+    background-color: var(--bg-color);
 }
 
 .socialIcons{
