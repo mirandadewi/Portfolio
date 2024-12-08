@@ -27,7 +27,7 @@ body{
     position: fixed;
     top: 0;
     left:0;
-    width: 100px;
+    width: 50px;
     padding: 3rem 9%;
     backdrop-filter: blur(10px);
     display:flex;
