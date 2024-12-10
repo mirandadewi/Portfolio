@@ -23,7 +23,8 @@ body{
     color: var(--text-color);
     font-family: "Poppins";
 }
-.header{
+
+header{
     position: fixed;
     top: 0;
     left:0;
@@ -34,7 +35,6 @@ body{
     justify-content: space-between;
     align-items:center;
     z-index: 100;
-    background-color: #a6b185;
 }
 .logo{
     font-size: 2rem;
