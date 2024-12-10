@@ -34,6 +34,7 @@ body{
     justify-content: space-between;
     align-items:center;
     z-index: 100;
+    background-color: #a6b185;
 }
 .logo{
     font-size: 2rem;
