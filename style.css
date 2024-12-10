@@ -56,7 +56,7 @@ body{
 }
 .navbar a:hover,
 .navbar a.active{
-    color: var(--second-bg-color);
+    color: var(--main-color);
     border-bottom: 0px solid var(--main-color);
 }
 #menu-icon{
@@ -515,68 +515,6 @@ span{
     -moz-border-radius: 30px;
     -ms-border-radius: 30px;
     -o-border-radius: 30px;
-}
-/* Contact css */
-.contact {
-    padding: 1rem;
-}
-
-
-.contact-form div {
-    margin-bottom: 2.4rem;
-    margin-top: 2rem;
-}
-
-.contact-form input,
-.contact-form textarea {
-    width: 80%;
-    padding: 0.75rem 1.3rem;
-    font-family: 'Times New Roman', Times, serif;
-    background: transparent;
-    border: 5px solid var(--main-color);
-    box-shadow: 0 0 1px;
-    border-radius: 10px;
-    -webkit-border-radius: 10px;
-    -moz-border-radius: 10px;
-    -ms-border-radius: 10px;
-    -o-border-radius: 10px;
-    resize: none;
-}
-
-.contact-form input::placeholder,
-.contact-form textarea::placeholder {
-    color: black;
-}
-
-.contact-form input:focus,
-.contact-form textarea:focus {
-    outline: none;
-    border: 1px solid var(--second-bg-color);
-}
-
-.btn-submit {
-    width: 80%;
-    padding: 0.75rem 1.3rem;
-    background-color: var(--main-color);
-    color: black;
-    border: none;
-    border-radius: 50px;
-    -webkit-border-radius: 50px;
-    -moz-border-radius: 50px;
-    -ms-border-radius: 50px;
-    -o-border-radius: 50px;
-    cursor: pointer;
-    transition: 0.2s ease-in-out;
-    -webkit-transition: 0.2s ease-in-out;
-    -moz-transition: 0.2s ease-in-out;
-    -ms-transition: 0.2s ease-in-out;
-    -o-transition: 0.2s ease-in-out;
-    letter-spacing: 0.1rem;
-}
-
-.btn-submit:hover {
-    background-color: var(--second-bg-color);
-    color: white;
 }
 
 .footerContainer{
