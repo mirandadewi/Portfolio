@@ -1,14 +1,26 @@
 // ===== TAB SWITCHING FUNCTION =====
-function showTab(tabName) {
-    const tabs = document.querySelectorAll('.tab-content');
-    const btns = document.querySelectorAll('.tab-btn');
-    
-    tabs.forEach(tab => tab.classList.remove('active'));
-    btns.forEach(btn => btn.classList.remove('active'));
-    
-    document.getElementById(tabName).classList.add('active');
-    event.target.classList.add('active');
-}
+const tabButtons = document.querySelectorAll('.tab-btn');
+const tabContents = document.querySelectorAll('.tab-content');
+
+tabButtons.forEach(button => {
+    button.addEventListener('click', () => {
+        // Remove active class from all buttons and contents
+        tabButtons.forEach(btn => btn.classList.remove('active'));
+        tabContents.forEach(content => content.classList.remove('active'));
+        
+        // Add active class to clicked button
+        button.classList.add('active');
+        
+        // Get the data-tab attribute value
+        const tabId = button.getAttribute('data-tab');
+        
+        // Show corresponding tab content
+        const targetContent = document.getElementById(tabId);
+        if (targetContent) {
+            targetContent.classList.add('active');
+        }
+    });
+});
 
 // ===== SMOOTH SCROLL =====
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -55,25 +67,42 @@ window.addEventListener('scroll', () => {
 });
 
 // ===== SKILL BARS ANIMATION =====
+let skillsAnimated = false;
+
 const animateSkills = () => {
-    const skillBars = document.querySelectorAll('.skill-fill');
     const skillsSection = document.querySelector('.skills');
     
-    if (!skillsSection) return;
+    if (!skillsSection || skillsAnimated) return;
     
     const skillsTop = skillsSection.offsetTop;
-    const skillsHeight = skillsSection.offsetHeight;
     const scrollPosition = window.scrollY + window.innerHeight;
     
-    if (scrollPosition > skillsTop + (skillsHeight / 3)) {
+    if (scrollPosition > skillsTop + 200) {
+        const skillBars = document.querySelectorAll('.skill-fill');
+        
         skillBars.forEach(bar => {
-            const width = bar.style.width;
-            bar.style.width = width;
+            // Get width from data-width attribute
+            const targetWidth = bar.getAttribute('data-width');
+            
+            if (targetWidth) {
+                // Start from 0
+                bar.style.width = '0%';
+                
+                // Animate to target width after small delay
+                setTimeout(() => {
+                    bar.style.width = targetWidth + '%';
+                }, 100);
+            }
         });
+        
+        skillsAnimated = true;
+        window.removeEventListener('scroll', animateSkills);
     }
 };
 
 window.addEventListener('scroll', animateSkills);
+// Check on page load
+window.addEventListener('load', animateSkills);
 
 // ===== CONSOLE MESSAGE =====
 console.log('%c👋 Welcome to Miranda Dewi Portfolio!', 'color: #FF69B4; font-size: 20px; font-weight: bold;');
