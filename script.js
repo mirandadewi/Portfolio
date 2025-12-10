@@ -1,29 +1,32 @@
 // ===== MOBILE MENU TOGGLE =====
 const navToggle = document.getElementById('navToggle');
-const navMenu = document.getElementById('navMenu');
-const navLinks = document.querySelectorAll('nav a');
+const navMenu = document.getElementById('navMenu') || document.querySelector('.nav-menu');
+const navLinks = document.querySelectorAll('nav a, .nav-link');
 
-// Toggle menu when hamburger clicked
-navToggle.addEventListener('click', () => {
-    navMenu.classList.toggle('active');
-    navToggle.classList.toggle('active');
-});
-
-// Close menu when link clicked
-navLinks.forEach(link => {
-    link.addEventListener('click', () => {
-        navMenu.classList.remove('active');
-        navToggle.classList.remove('active');
+if (navToggle && navMenu) {
+    // Toggle menu when hamburger clicked
+    navToggle.addEventListener('click', (e) => {
+        e.stopPropagation();
+        navMenu.classList.toggle('active');
+        navToggle.classList.toggle('active');
     });
-});
 
-// Close menu when clicking outside
-document.addEventListener('click', (e) => {
-    if (!navToggle.contains(e.target) && !navMenu.contains(e.target)) {
-        navMenu.classList.remove('active');
-        navToggle.classList.remove('active');
-    }
-});
+    // Close menu when link clicked
+    navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            navMenu.classList.remove('active');
+            navToggle.classList.remove('active');
+        });
+    });
+
+    // Close menu when clicking outside
+    document.addEventListener('click', (e) => {
+        if (!navToggle.contains(e.target) && !navMenu.contains(e.target)) {
+            navMenu.classList.remove('active');
+            navToggle.classList.remove('active');
+        }
+    });
+}
 
 // ===== TAB SWITCHING FUNCTION =====
 const tabButtons = document.querySelectorAll('.tab-btn');
