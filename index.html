@@ -6,30 +6,53 @@
     <title>Miranda Dewi - Portfolio</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
     <!-- Navigation -->
-    <nav class="navbar">
+    <nav class="navbar" id="navbar">
         <div class="container">
-            <div class="logo">Miranda Dewi</div>
-            <ul class="nav-menu">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#education">Education</a></li>
-                <li><a href="#experience">Experience</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#project">Project</a></li>
+            <div class="logo">Miranda<span> Dewi</span></div>
+            <button class="nav-toggle" id="navToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="#home" class="nav-link">Home</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#education" class="nav-link">Education</a></li>
+                <li><a href="#experience" class="nav-link">Experience</a></li>
+                <li><a href="#skills" class="nav-link">Skills</a></li>
+                <li><a href="#project" class="nav-link">Project</a></li>
             </ul>
         </div>
     </nav>
 
     <!-- Hero Section -->
     <section id="home" class="hero">
+        <div class="hero-bg"></div>
         <div class="container">
             <div class="hero-content">
-                <h1>Hello, I'm <span class="highlight">Miranda</span></h1>
-                <p>I am an active student in the field of Information Technology. I like new challenges to increase my grades and increase my experience.</p>
-                <a href="#" class="btn">My CV</a>
+                <div class="hero-text">
+                    <p class="greeting">Hello, I'm</p>
+                    <h1>Miranda <span class="highlight">Dewi</span></h1>
+                    <p class="tagline">Information Technology Student | Web Developer | UI/UX Designer</p>
+                    <p class="description">I am an active student in the field of Information Technology. I like new challenges to increase my grades and increase my experience.</p>
+                    <div class="hero-buttons">
+                        <a href="#" class="btn btn-primary">
+                            <i class="fas fa-download"></i> Download CV
+                        </a>
+                        <a href="#about" class="btn btn-secondary">
+                            <i class="fas fa-user"></i> About Me
+                        </a>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <div class="image-wrapper">
+                        <img src="assets/mimi.png" alt="Miranda Dewi" class="profile-image">
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -37,11 +60,38 @@
     <!-- About Section -->
     <section id="about" class="about">
         <div class="container">
-            <h2 class="section-title">About Me</h2>
+            <h2 class="section-title">About <span>Me</span></h2>
             <div class="about-content">
-                <p>Miranda Dewi was the general chairman of the youth doctor organization in 2020/2021 when she was in high school. At that time, Miranda once won 2nd place which was done as a team when participating in one of the competitions with the theme of the 4th Anti-drug Festival with the name of the organization and school.</p>
-                <p>Currently Miranda is focusing on the field of technology, namely Web Development and UI UX Design to focus on that skill. Miranda is participating in an independent study of Infinite Learning at PT kinema systrans multimedia. Miranda has also participated in CTF (Capture the flag) competitions several times in gemastik, ara and jawara also participated in several other trainings such as data science, junior web, sql courses and others.</p>
-                <p class="highlight-text">Who is interested in using my services in completing UI/UX projects, please connect and reach out.</p>
+                <div class="about-text">
+                    <p>Miranda Dewi was the <strong>general chairman of the youth doctor organization</strong> in 2020/2021 when she was in high school. At that time, Miranda once won <strong>2nd place</strong> which was done as a team when participating in one of the competitions with the theme of the 4th Anti-drug Festival with the name of the organization and school.</p>
+                    
+                    <p>Currently Miranda is focusing on the field of technology, namely <strong>Web Development</strong> and <strong>UI/UX Design</strong> to focus on that skill. Miranda is participating in an independent study of Infinite Learning at PT kinema systrans multimedia.</p>
+                    
+                    <p>Miranda has also participated in <strong>CTF (Capture the Flag)</strong> competitions several times in gemastik, ara and jawara also participated in several other trainings such as data science, junior web, SQL courses and others.</p>
+                    
+                    <div class="cta-box">
+                        <i class="fas fa-handshake"></i>
+                        <p>Who is interested in using my services in completing UI/UX projects, please connect and reach out.</p>
+                    </div>
+                </div>
+                
+                <div class="about-info">
+                    <div class="info-card">
+                        <i class="fas fa-trophy"></i>
+                        <h3>8+</h3>
+                        <p>Certifications</p>
+                    </div>
+                    <div class="info-card">
+                        <i class="fas fa-project-diagram"></i>
+                        <h3>6+</h3>
+                        <p>Projects</p>
+                    </div>
+                    <div class="info-card">
+                        <i class="fas fa-users"></i>
+                        <h3>3+</h3>
+                        <p>Organizations</p>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -49,24 +99,32 @@
     <!-- Education Section -->
     <section id="education" class="education">
         <div class="container">
-            <h2 class="section-title">Education</h2>
+            <h2 class="section-title">My <span>Education</span></h2>
             <div class="timeline">
                 <div class="timeline-item">
-                    <div class="timeline-date">2017 - 2019</div>
+                    <div class="timeline-marker"></div>
                     <div class="timeline-content">
-                        <h3>MTS Al Jam'iyatul Washliyah Tembung</h3>
+                        <span class="timeline-year">2017 - 2019</span>
+                        <h3><i class="fas fa-graduation-cap"></i> MTS Al Jam'iyatul Washliyah Tembung</h3>
+                        <p>Junior High School</p>
                     </div>
                 </div>
+                
                 <div class="timeline-item">
-                    <div class="timeline-date">2019 - 2021</div>
+                    <div class="timeline-marker"></div>
                     <div class="timeline-content">
-                        <h3>SMA Negeri 11 Medan</h3>
+                        <span class="timeline-year">2019 - 2021</span>
+                        <h3><i class="fas fa-graduation-cap"></i> SMA Negeri 11 Medan</h3>
+                        <p>Senior High School</p>
                     </div>
                 </div>
+                
                 <div class="timeline-item">
-                    <div class="timeline-date">2021 - 2025</div>
+                    <div class="timeline-marker"></div>
                     <div class="timeline-content">
-                        <h3>Universitas Muhammadiyah Sumatera Utara</h3>
+                        <span class="timeline-year">2021 - 2025</span>
+                        <h3><i class="fas fa-university"></i> Universitas Muhammadiyah Sumatera Utara</h3>
+                        <p>Bachelor's Degree - Information Technology</p>
                     </div>
                 </div>
             </div>
@@ -76,80 +134,100 @@
     <!-- Experience Section -->
     <section id="experience" class="experience">
         <div class="container">
-            <h2 class="section-title">Experience & Organisation</h2>
+            <h2 class="section-title">Experience & <span>Organisation</span></h2>
             
-            <div class="exp-grid">
-                <div class="exp-column">
-                    <h3 class="sub-title">Experience</h3>
-                    
-                    <div class="exp-item">
-                        <span class="year">2021</span>
-                        <h4>Bootcamp Prograte</h4>
-                        <p>Program Mysql</p>
-                    </div>
+            <div class="exp-tabs">
+                <button class="tab-btn active" data-tab="experience-tab">
+                    <i class="fas fa-briefcase"></i> Experience
+                </button>
+                <button class="tab-btn" data-tab="organisation-tab">
+                    <i class="fas fa-users"></i> Organisation
+                </button>
+            </div>
 
-                    <div class="exp-item">
-                        <span class="year">2023</span>
-                        <h4>RevoU</h4>
-                        <p>Software Engineering Mini Course</p>
-                    </div>
+            <div class="exp-content">
+                <div class="tab-content active" id="experience-tab">
+                    <div class="exp-grid">
+                        <div class="exp-card">
+                            <div class="exp-icon"><i class="fas fa-database"></i></div>
+                            <span class="exp-year">2021</span>
+                            <h4>Bootcamp Prograte</h4>
+                            <p>Program MySQL</p>
+                        </div>
 
-                    <div class="exp-item">
-                        <span class="year">2023</span>
-                        <h4>Badan Nasional Sertifikat Profesi (BNSP)</h4>
-                        <p>Program Junior Web Development</p>
-                    </div>
+                        <div class="exp-card">
+                            <div class="exp-icon"><i class="fas fa-code"></i></div>
+                            <span class="exp-year">2023</span>
+                            <h4>RevoU</h4>
+                            <p>Software Engineering Mini Course</p>
+                        </div>
 
-                    <div class="exp-item">
-                        <span class="year">2024</span>
-                        <h4>MSIB Studi Independent</h4>
-                        <p>Program Web Development & UI UX Design</p>
-                    </div>
+                        <div class="exp-card">
+                            <div class="exp-icon"><i class="fas fa-certificate"></i></div>
+                            <span class="exp-year">2023</span>
+                            <h4>BNSP</h4>
+                            <p>Program Junior Web Development</p>
+                        </div>
 
-                    <div class="exp-item">
-                        <span class="year">2024</span>
-                        <h4>ASEAN Foundation</h4>
-                        <p>SAP Analytics Cloud and SAP Build Apps</p>
-                    </div>
+                        <div class="exp-card">
+                            <div class="exp-icon"><i class="fas fa-laptop-code"></i></div>
+                            <span class="exp-year">2024</span>
+                            <h4>MSIB Studi Independent</h4>
+                            <p>Program Web Development & UI UX Design</p>
+                        </div>
 
-                    <div class="exp-item">
-                        <span class="year">2024</span>
-                        <h4>Badan Nasional Sertifikat Profesi (BNSP)</h4>
-                        <p>Junior Graphic Design</p>
-                    </div>
+                        <div class="exp-card">
+                            <div class="exp-icon"><i class="fas fa-chart-line"></i></div>
+                            <span class="exp-year">2024</span>
+                            <h4>ASEAN Foundation</h4>
+                            <p>SAP Analytics Cloud and SAP Build Apps</p>
+                        </div>
 
-                    <div class="exp-item">
-                        <span class="year">2024</span>
-                        <h4>Badan Nasional Sertifikat Profesi (BNSP)</h4>
-                        <p>Junior Network Administrator</p>
-                    </div>
+                        <div class="exp-card">
+                            <div class="exp-icon"><i class="fas fa-paint-brush"></i></div>
+                            <span class="exp-year">2024</span>
+                            <h4>BNSP</h4>
+                            <p>Junior Graphic Design</p>
+                        </div>
 
-                    <div class="exp-item">
-                        <span class="year">2024</span>
-                        <h4>Kampus Merdeka Mandiri</h4>
-                        <p>Program Mobile Development & UI UX Design</p>
+                        <div class="exp-card">
+                            <div class="exp-icon"><i class="fas fa-network-wired"></i></div>
+                            <span class="exp-year">2024</span>
+                            <h4>BNSP</h4>
+                            <p>Junior Network Administrator</p>
+                        </div>
+
+                        <div class="exp-card">
+                            <div class="exp-icon"><i class="fas fa-mobile-alt"></i></div>
+                            <span class="exp-year">2024</span>
+                            <h4>Kampus Merdeka Mandiri</h4>
+                            <p>Program Mobile Development & UI UX Design</p>
+                        </div>
                     </div>
                 </div>
 
-                <div class="exp-column">
-                    <h3 class="sub-title">Organisation</h3>
-                    
-                    <div class="exp-item">
-                        <span class="year">2020 - 2021</span>
-                        <h4>Dokter Remaja</h4>
-                        <p>Ketua Umum</p>
-                    </div>
+                <div class="tab-content" id="organisation-tab">
+                    <div class="exp-grid">
+                        <div class="exp-card">
+                            <div class="exp-icon"><i class="fas fa-user-md"></i></div>
+                            <span class="exp-year">2020 - 2021</span>
+                            <h4>Dokter Remaja</h4>
+                            <p>Ketua Umum</p>
+                        </div>
 
-                    <div class="exp-item">
-                        <span class="year">2022</span>
-                        <h4>Himpunan Mahasiswa Teknologi Informasi</h4>
-                        <p>Divisi Pendidikan dan Penelitian</p>
-                    </div>
+                        <div class="exp-card">
+                            <div class="exp-icon"><i class="fas fa-laptop"></i></div>
+                            <span class="exp-year">2022</span>
+                            <h4>Himpunan Mahasiswa Teknologi Informasi</h4>
+                            <p>Divisi Pendidikan dan Penelitian</p>
+                        </div>
 
-                    <div class="exp-item">
-                        <span class="year">2022</span>
-                        <h4>Cyber Security Community</h4>
-                        <p>Sekretaris</p>
+                        <div class="exp-card">
+                            <div class="exp-icon"><i class="fas fa-shield-alt"></i></div>
+                            <span class="exp-year">2022</span>
+                            <h4>Cyber Security Community</h4>
+                            <p>Sekretaris</p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -159,83 +237,87 @@
     <!-- Skills Section -->
     <section id="skills" class="skills">
         <div class="container">
-            <h2 class="section-title">My Skills</h2>
+            <h2 class="section-title">My <span>Skills</span></h2>
             
-            <div class="skills-grid">
+            <div class="skills-container">
                 <div class="skills-column">
-                    <h3 class="sub-title">Coding Skills</h3>
+                    <h3 class="skills-subtitle">
+                        <i class="fas fa-code"></i> Coding Skills
+                    </h3>
                     
                     <div class="skill-item">
-                        <div class="skill-header">
-                            <span>HTML</span>
-                            <span>85%</span>
+                        <div class="skill-info">
+                            <span class="skill-name">HTML</span>
+                            <span class="skill-percent">85%</span>
                         </div>
                         <div class="skill-bar">
-                            <div class="skill-progress" style="width: 85%"></div>
+                            <div class="skill-fill" data-width="85"></div>
                         </div>
                     </div>
 
                     <div class="skill-item">
-                        <div class="skill-header">
-                            <span>CSS</span>
-                            <span>80%</span>
+                        <div class="skill-info">
+                            <span class="skill-name">CSS</span>
+                            <span class="skill-percent">80%</span>
                         </div>
                         <div class="skill-bar">
-                            <div class="skill-progress" style="width: 80%"></div>
+                            <div class="skill-fill" data-width="80"></div>
                         </div>
                     </div>
 
                     <div class="skill-item">
-                        <div class="skill-header">
-                            <span>Java</span>
-                            <span>50%</span>
+                        <div class="skill-info">
+                            <span class="skill-name">Java</span>
+                            <span class="skill-percent">50%</span>
                         </div>
                         <div class="skill-bar">
-                            <div class="skill-progress" style="width: 50%"></div>
+                            <div class="skill-fill" data-width="50"></div>
                         </div>
                     </div>
                 </div>
 
                 <div class="skills-column">
-                    <h3 class="sub-title">Professional Skills</h3>
+                    <h3 class="skills-subtitle">
+                        <i class="fas fa-tools"></i> Professional Skills
+                    </h3>
                     
                     <div class="skill-item">
-                        <div class="skill-header">
-                            <span>Front End Developer</span>
-                            <span>65%</span>
+                        <div class="skill-info">
+                            <span class="skill-name">Front End Developer</span>
+                            <span class="skill-percent">65%</span>
                         </div>
                         <div class="skill-bar">
-                            <div class="skill-progress" style="width: 65%"></div>
+                            <div class="skill-fill" data-width="65"></div>
                         </div>
                     </div>
 
                     <div class="skill-item">
-                        <div class="skill-header">
-                            <span>Microsoft Office</span>
-                            <span>85%</span>
+                        <div class="skill-info">
+                            <span class="skill-name">Microsoft Office</span>
+                            <span class="skill-percent">85%</span>
                         </div>
                         <div class="skill-bar">
-                            <div class="skill-progress" style="width: 85%"></div>
+                            <div class="skill-fill" data-width="85"></div>
                         </div>
                     </div>
 
                     <div class="skill-item">
-                        <div class="skill-header">
-                            <span>UI UX Design</span>
-                            <span>85%</span>
+                        <div class="skill-info">
+                            <span class="skill-name">UI UX Design</span>
+                            <span class="skill-percent">85%</span>
                         </div>
                         <div class="skill-bar">
-                            <div class="skill-progress" style="width: 85%"></div>
+                            <div class="skill-fill" data-width="85"></div>
                         </div>
                     </div>
 
                     <div class="skill-item">
-                        <div class="skill-header">
-                            <span>Web Design</span>
-                            <span>85%</span>
+                        <div class="skill-info">
+                            <span class="skill-name">Web Design</span>
+                            <span class="skill-percent">85%</span>
                         </div>
                         <div class="skill-bar">
-                            <div class="skill-progress" style="width: 85%"></div>
+                            <div class="skill-fill" data-width="85"></div>
                         </div>
                     </div>
                 </div>
@@ -246,66 +328,84 @@
     <!-- Project Section -->
     <section id="project" class="project">
         <div class="container">
-            <h2 class="section-title">My Projects</h2>
+            <h2 class="section-title">My <span>Projects</span></h2>
             
             <div class="project-grid">
                 <div class="project-card">
                     <div class="project-image">
-                        <img src="project1.jpg" alt="Project 1">
+                        <img src="assets/agrirent.png" alt="Project 1">
+                        <div class="project-overlay">
+                            <a href="#" class="project-link"><i class="fas fa-eye"></i></a>
+                        </div>
                     </div>
                     <div class="project-info">
                         <h3>Project 1</h3>
-                        <p>Figma</p>
+                        <p><i class="fab fa-figma"></i> Figma</p>
                     </div>
                 </div>
 
                 <div class="project-card">
                     <div class="project-image">
-                        <img src="project2.jpg" alt="Project 2">
+                        <img src="assets/coverDermaCeria.png" alt="Project 2">
+                        <div class="project-overlay">
+                            <a href="#" class="project-link"><i class="fas fa-eye"></i></a>
+                        </div>
                     </div>
                     <div class="project-info">
                         <h3>Project 2</h3>
-                        <p>Figma</p>
+                        <p><i class="fab fa-figma"></i> Figma</p>
                     </div>
                 </div>
 
                 <div class="project-card">
                     <div class="project-image">
-                        <img src="project3.jpg" alt="Project 3">
+                        <img src="assets/halal trace.png" alt="Project 3">
+                        <div class="project-overlay">
+                            <a href="#" class="project-link"><i class="fas fa-eye"></i></a>
+                        </div>
                     </div>
                     <div class="project-info">
                         <h3>Project 3</h3>
-                        <p>Figma</p>
+                        <p><i class="fab fa-figma"></i> Figma</p>
                     </div>
                 </div>
 
                 <div class="project-card">
                     <div class="project-image">
-                        <img src="project4.jpg" alt="Project 4">
+                        <img src="assets/resikel.png" alt="Project 4">
+                        <div class="project-overlay">
+                            <a href="#" class="project-link"><i class="fas fa-eye"></i></a>
+                        </div>
                     </div>
                     <div class="project-info">
                         <h3>Project 4</h3>
-                        <p>Adobe Illustrator • Adobe Photoshop</p>
+                        <p><i class="fas fa-palette"></i> Adobe Illustrator • Adobe Photoshop</p>
                     </div>
                 </div>
 
                 <div class="project-card">
                     <div class="project-image">
-                        <img src="project5.jpg" alt="Project 5">
+                        <img src="assets/graphic.png" alt="Project 5">
+                        <div class="project-overlay">
+                            <a href="#" class="project-link"><i class="fas fa-eye"></i></a>
+                        </div>
                     </div>
                     <div class="project-info">
                         <h3>Project 5</h3>
-                        <p>Figma</p>
+                        <p><i class="fab fa-figma"></i> Figma</p>
                     </div>
                 </div>
 
                 <div class="project-card">
                     <div class="project-image">
-                        <img src="project6.jpg" alt="Project 6">
+                        <img src="assets/mcollection.png" alt="Project 6">
+                        <div class="project-overlay">
+                            <a href="#" class="project-link"><i class="fas fa-eye"></i></a>
+                        </div>
                     </div>
                     <div class="project-info">
                         <h3>Project 6</h3>
-                        <p>Figma</p>
+                        <p><i class="fab fa-figma"></i> Figma</p>
                     </div>
                 </div>
             </div>
@@ -315,9 +415,29 @@
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
-            <p>&copy; 2024 All Right Reserved</p>
+            <div class="footer-content">
+                <div class="footer-info">
+                    <h3>Miranda Dewi</h3>
+                    <p>Information Technology Student</p>
+                    <p>Web Developer | UI/UX Designer</p>
+                </div>
+                <div class="footer-social">
+                    <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-github"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="social-link"><i class="fas fa-envelope"></i></a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Miranda Dewi. All Rights Reserved</p>
+            </div>
         </div>
     </footer>
+
+    <!-- Scroll to Top Button -->
+    <button class="scroll-top" id="scrollTop">
+        <i class="fas fa-arrow-up"></i>
+    </button>
 
     <script src="script.js"></script>
 </body>

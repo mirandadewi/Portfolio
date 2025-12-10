@@ -1,67 +1,198 @@
-// Smooth Scrolling
+// ===== SMOOTH SCROLLING =====
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
         e.preventDefault();
         const target = document.querySelector(this.getAttribute('href'));
         if (target) {
-            target.scrollIntoView({
-                behavior: 'smooth',
-                block: 'start'
+            const offsetTop = target.offsetTop - 70;
+            window.scrollTo({
+                top: offsetTop,
+                behavior: 'smooth'
             });
+            
+            // Close mobile menu if open
+            if (navMenu.classList.contains('active')) {
+                navMenu.classList.remove('active');
+            }
         }
     });
 });
 
-// Navbar scroll effect
-window.addEventListener('scroll', function() {
-    const navbar = document.querySelector('.navbar');
-    if (window.scrollY > 50) {
-        navbar.style.background = 'rgba(255, 255, 255, 0.95)';
-    } else {
-        navbar.style.background = '#fff';
+// ===== MOBILE MENU TOGGLE =====
+const navToggle = document.getElementById('navToggle');
+const navMenu = document.getElementById('navMenu');
+
+navToggle.addEventListener('click', () => {
+    navMenu.classList.toggle('active');
+});
+
+// Close menu when clicking outside
+document.addEventListener('click', (e) => {
+    if (!navToggle.contains(e.target) && !navMenu.contains(e.target)) {
+        navMenu.classList.remove('active');
     }
 });
 
-// Skill bar animation on scroll
-const observerOptions = {
-    threshold: 0.5,
-    rootMargin: '0px'
+// ===== NAVBAR SCROLL EFFECT =====
+const navbar = document.getElementById('navbar');
+
+window.addEventListener('scroll', () => {
+    if (window.scrollY > 50) {
+        navbar.classList.add('scrolled');
+    } else {
+        navbar.classList.remove('scrolled');
+    }
+});
+
+// ===== ACTIVE NAVIGATION LINK =====
+const sections = document.querySelectorAll('section[id]');
+const navLinks = document.querySelectorAll('.nav-link');
+
+function setActiveLink() {
+    const scrollPosition = window.scrollY + 100;
+
+    sections.forEach(section => {
+        const sectionTop = section.offsetTop;
+        const sectionHeight = section.offsetHeight;
+        const sectionId = section.getAttribute('id');
+
+        if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === `#${sectionId}`) {
+                    link.classList.add('active');
+                }
+            });
+        }
+    });
+}
+
+window.addEventListener('scroll', setActiveLink);
+
+// ===== TABS FUNCTIONALITY =====
+const tabBtns = document.querySelectorAll('.tab-btn');
+const tabContents = document.querySelectorAll('.tab-content');
+
+tabBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+        // Remove active class from all buttons and contents
+        tabBtns.forEach(b => b.classList.remove('active'));
+        tabContents.forEach(content => content.classList.remove('active'));
+
+        // Add active class to clicked button and corresponding content
+        btn.classList.add('active');
+        const tabId = btn.getAttribute('data-tab');
+        document.getElementById(tabId).classList.add('active');
+    });
+});
+
+// ===== SKILL BARS ANIMATION =====
+const skillBars = document.querySelectorAll('.skill-fill');
+
+const animateSkills = () => {
+    const skillsSection = document.querySelector('.skills');
+    const skillsSectionTop = skillsSection.offsetTop;
+    const skillsSectionHeight = skillsSection.offsetHeight;
+    const scrollPosition = window.scrollY + window.innerHeight;
+
+    if (scrollPosition > skillsSectionTop + (skillsSectionHeight / 3)) {
+        skillBars.forEach(bar => {
+            const width = bar.getAttribute('data-width');
+            bar.style.width = width + '%';
+            bar.classList.add('animated');
+        });
+        
+        // Remove event listener after animation
+        window.removeEventListener('scroll', animateSkills);
+    }
 };
 
-const observer = new IntersectionObserver(function(entries) {
+window.addEventListener('scroll', animateSkills);
+
+// ===== SCROLL TO TOP BUTTON =====
+const scrollTopBtn = document.getElementById('scrollTop');
+
+window.addEventListener('scroll', () => {
+    if (window.scrollY > 300) {
+        scrollTopBtn.classList.add('active');
+    } else {
+        scrollTopBtn.classList.remove('active');
+    }
+});
+
+scrollTopBtn.addEventListener('click', () => {
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    });
+});
+
+// ===== INTERSECTION OBSERVER FOR ANIMATIONS =====
+const observerOptions = {
+    threshold: 0.1,
+    rootMargin: '0px 0px -100px 0px'
+};
+
+const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
-            const skillBars = entry.target.querySelectorAll('.skill-progress');
-            skillBars.forEach(bar => {
-                bar.style.width = bar.style.width || '0%';
-            });
+            entry.target.style.opacity = '1';
+            entry.target.style.transform = 'translateY(0)';
         }
     });
 }, observerOptions);
 
-const skillsSection = document.querySelector('.skills');
-if (skillsSection) {
-    observer.observe(skillsSection);
+// Observe elements for animation
+const animatedElements = document.querySelectorAll(
+    '.timeline-item, .exp-card, .project-card, .info-card'
+);
+
+animatedElements.forEach(el => {
+    el.style.opacity = '0';
+    el.style.transform = 'translateY(30px)';
+    el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+    observer.observe(el);
+});
+
+// ===== TYPING EFFECT FOR HERO TEXT (OPTIONAL) =====
+const tagline = document.querySelector('.tagline');
+if (tagline) {
+    const text = tagline.textContent;
+    tagline.textContent = '';
+    let i = 0;
+
+    function typeWriter() {
+        if (i < text.length) {
+            tagline.textContent += text.charAt(i);
+            i++;
+            setTimeout(typeWriter, 50);
+        }
+    }
+
+    // Start typing effect after page loads
+    window.addEventListener('load', () => {
+        setTimeout(typeWriter, 500);
+    });
 }
 
-// Active navigation highlight
-window.addEventListener('scroll', function() {
-    const sections = document.querySelectorAll('section[id]');
-    const navLinks = document.querySelectorAll('.nav-menu a');
-    
-    let current = '';
-    sections.forEach(section => {
-        const sectionTop = section.offsetTop;
-        const sectionHeight = section.clientHeight;
-        if (scrollY >= (sectionTop - 100)) {
-            current = section.getAttribute('id');
-        }
+// ===== PREVENT FLASH OF UNSTYLED CONTENT =====
+window.addEventListener('load', () => {
+    document.body.style.visibility = 'visible';
+});
+
+// ===== PROJECT CARDS HOVER EFFECT =====
+const projectCards = document.querySelectorAll('.project-card');
+
+projectCards.forEach(card => {
+    card.addEventListener('mouseenter', function() {
+        this.style.transform = 'translateY(-10px) scale(1.02)';
     });
 
-    navLinks.forEach(link => {
-        link.classList.remove('active');
-        if (link.getAttribute('href').substring(1) === current) {
-            link.classList.add('active');
-        }
+    card.addEventListener('mouseleave', function() {
+        this.style.transform = 'translateY(0) scale(1)';
     });
 });
+
+// ===== CONSOLE MESSAGE =====
+console.log('%c👋 Welcome to Miranda Dewi Portfolio!', 'color: #6C63FF; font-size: 20px; font-weight: bold;');
+console.log('%cDesigned & Developed with ❤️', 'color: #764ba2; font-size: 14px;');
