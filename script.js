@@ -79,7 +79,7 @@ const observer = new IntersectionObserver((entries) => {
 });
 
 // Apply animation to elements
-document.querySelectorAll('.exp-card, .project-card, .timeline-item').forEach(el => {
+document.querySelectorAll('.exp-card, .project-card, .timeline-item, .skill-description').forEach(el => {
     el.style.opacity = '0';
     el.style.transform = 'translateY(30px)';
     el.style.transition = 'all 0.6s ease';
@@ -97,42 +97,7 @@ window.addEventListener('scroll', () => {
 });
 
 // ===== SKILL BARS ANIMATION =====
-let skillsAnimated = false;
-
-const animateSkills = () => {
-    const skillsSection = document.querySelector('.skills');
-    
-    if (!skillsSection || skillsAnimated) return;
-    
-    const skillsTop = skillsSection.offsetTop;
-    const scrollPosition = window.scrollY + window.innerHeight;
-    
-    if (scrollPosition > skillsTop + 200) {
-        const skillBars = document.querySelectorAll('.skill-fill');
-        
-        skillBars.forEach(bar => {
-            // Get width from data-width attribute
-            const targetWidth = bar.getAttribute('data-width');
-            
-            if (targetWidth) {
-                // Start from 0
-                bar.style.width = '0%';
-                
-                // Animate to target width after small delay
-                setTimeout(() => {
-                    bar.style.width = targetWidth + '%';
-                }, 100);
-            }
-        });
-        
-        skillsAnimated = true;
-        window.removeEventListener('scroll', animateSkills);
-    }
-};
-
-window.addEventListener('scroll', animateSkills);
-// Check on page load
-window.addEventListener('load', animateSkills);
+// Removed as skills now use descriptions instead of bars
 
 // ===== CONSOLE MESSAGE =====
 console.log('%c👋 Welcome to Miranda Dewi Portfolio!', 'color: #FF69B4; font-size: 20px; font-weight: bold;');
